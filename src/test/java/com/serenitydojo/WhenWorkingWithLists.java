@@ -18,11 +18,8 @@ public class WhenWorkingWithLists {
     // We can create a list containing a specified list of values
     @Test
     public void creatingAListOfValues() {
-        List<String> colors = null;
 
-        // TODO: Create an immutable list of Strings containing the values "red", "green" and "blue"
-        //  using the Arrays.asList() method
-
+        List<String> colors = Arrays.asList("red", "green", "blue");
         assertThat(colors).containsExactly("red", "green", "blue");
     }
 
@@ -31,8 +28,9 @@ public class WhenWorkingWithLists {
     public void addingAValueToAnEmptyList() {
         List<String> colors = null;
 
-        // TODO: Create a new ArrayList, and add "red" and "green" this list
-
+        colors = new ArrayList<>();
+        colors.add("red");
+        colors.add("green");
         assertThat(colors).containsExactly("red", "green");
     }
 
@@ -41,8 +39,7 @@ public class WhenWorkingWithLists {
     public void addingAValueToTheEndList() {
         List<String> colors = new ArrayList<>(Arrays.asList("red", "green", "blue"));
 
-        // TODO: Add "yellow" to the END of this list
-
+        colors.add("yellow");
         assertThat(colors).containsExactly("red", "green", "blue", "yellow");
     }
 
@@ -51,8 +48,7 @@ public class WhenWorkingWithLists {
     public void addingAValueToTheStartOfAList() {
         List<String> colors = new ArrayList<>(Arrays.asList("red", "green", "blue"));
 
-        // TODO: Add "yellow" to the START of this list
-
+        colors.add(0, "yellow");
         assertThat(colors).containsExactly("yellow", "red", "green", "blue");
     }
 
@@ -61,8 +57,7 @@ public class WhenWorkingWithLists {
     public void deletingAValueInAList() {
         List<String> colors = new ArrayList<>(Arrays.asList("red", "green", "blue"));
 
-        // TODO: Remote "green" from the list
-
+        colors.remove("green");
         assertThat(colors).containsExactly( "red", "blue");
     }
 
@@ -71,7 +66,7 @@ public class WhenWorkingWithLists {
     public void findingTheLengthOfAList() {
         List<String> colors = new ArrayList<>(Arrays.asList("red", "green", "blue"));
 
-        int numberOfElements = 0;
+        int numberOfElements = colors.size();
         // TODO: Remote "green" from the list
 
         assertThat(numberOfElements).isEqualTo(3);
